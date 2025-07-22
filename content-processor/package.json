@@ -1,0 +1,1 @@
+{\n  \"name\": \"content-processor\",\n  \"version\": \"1.0.0\",\n  \"private\": true,\n  \"scripts\": {\n    \"deploy\": \"wrangler deploy\",\n    \"dev\": \"wrangler dev\"\n  },\n  \"devDependencies\": {\n    \"@cloudflare/workers-types\": \"^4.20250106.0\",\n    \"typescript\": \"^5.5.2\",\n    \"wrangler\": \"^4.25.1\"\n  }\n}
