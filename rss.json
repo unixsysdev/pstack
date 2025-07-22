@@ -1,0 +1,1511 @@
+{
+   " ""description":"RSS and feed-compatible sources - FINAL with manual fixes",
+   " ""count":81,
+   " ""sources":[
+      "   "{
+         "     ""name":"Defense One",
+         "     ""rss_url":"https://www.defenseone.com/rss/all/",
+         "     ""main_url":"https://www.defenseone.com",
+         "     ""category":"defense_policy",
+         "     ""update_frequency":"daily",
+         "     ""geo_focus":[
+            "       ""US",
+            "       ""global""     "
+         ],
+         "     ""tags":[
+            "       ""defense",
+            "       ""military",
+            "       ""pentagon",
+            "       ""technology""     "
+         ],
+         "     ""source_file":"a""   "
+      },
+      "   "{
+         "     ""name":"Breaking Defense",
+         "     ""rss_url":"https://breakingdefense.com/rss/",
+         "     ""main_url":"https://breakingdefense.com",
+         "     ""category":"defense_industry",
+         "     ""update_frequency":"daily",
+         "     ""geo_focus":[
+            "       ""US",
+            "       ""NATO",
+            "       ""allies""     "
+         ],
+         "     ""tags":[
+            "       ""defense_industry",
+            "       ""contracts",
+            "       ""weapons",
+            "       ""procurement""     "
+         ],
+         "     ""source_file":"a""   "
+      },
+      "   "{
+         "     ""name":"Defense News",
+         "     ""rss_url":"https://www.defensenews.com/arc/outboundfeeds/rss/",
+         "     ""main_url":"https://www.defensenews.com",
+         "     ""category":"global_defense",
+         "     ""update_frequency":"daily",
+         "     ""geo_focus":[
+            "       ""global",
+            "       ""US",
+            "       ""Europe",
+            "       ""Asia""     "
+         ],
+         "     ""tags":[
+            "       ""global_defense",
+            "       ""international",
+            "       ""military_tech""     "
+         ],
+         "     ""source_file":"a""   "
+      },
+      "   "{
+         "     ""name":"DefenseScoop",
+         "     ""rss_url":"https://defensescoop.com/feed/",
+         "     ""main_url":"https://defensescoop.com",
+         "     ""category":"defense_tech",
+         "     ""update_frequency":"daily",
+         "     ""geo_focus":[
+            "       ""US""     "
+         ],
+         "     ""tags":[
+            "       ""defense_tech",
+            "       ""cybersecurity",
+            "       ""AI",
+            "       ""innovation""     "
+         ],
+         "     ""source_file":"a""   "
+      },
+      "   "{
+         "     ""name":"Institute for the Study of War",
+         "     ""rss_url":"https://www.understandingwar.org/rss.xml",
+         "     ""main_url":"https://www.understandingwar.org",
+         "     ""category":"conflict_analysis",
+         "     ""update_frequency":"daily",
+         "     ""geo_focus":[
+            "       ""ukraine",
+            "       ""russia",
+            "       ""iran",
+            "       ""middle_east""     "
+         ],
+         "     ""tags":[
+            "       ""war_analysis",
+            "       ""ukraine",
+            "       ""russia",
+            "       ""iran""     "
+         ],
+         "     ""source_file":"a""   "
+      },
+      "   "{
+         "     ""name":"Pentagon Contracts",
+         "     ""rss_url":"https://www.defense.gov/DesktopModules/ArticleCS/RSS.ashx?ContentType=9",
+         "     ""main_url":"https://www.defense.gov/News/Contracts/",
+         "     ""category":"procurement",
+         "     ""update_frequency":"daily",
+         "     ""geo_focus":[
+            "       ""US""     "
+         ],
+         "     ""tags":[
+            "       ""contracts",
+            "       ""procurement",
+            "       ""spending",
+            "       ""vendors""     "
+         ],
+         "     ""source_file":"a""   "
+      },
+      "   "{
+         "     ""name":"CISA Advisories",
+         "     ""rss_url":"https://www.cisa.gov/cybersecurity-advisories/all.xml",
+         "     ""main_url":"https://www.cisa.gov/news-events/cybersecurity-advisories",
+         "     ""category":"cybersecurity",
+         "     ""update_frequency":"daily",
+         "     ""geo_focus":[
+            "       ""US",
+            "       ""global""     "
+         ],
+         "     ""tags":[
+            "       ""cybersecurity",
+            "       ""threats",
+            "       ""vulnerabilities""     "
+         ],
+         "     ""source_file":"a""   "
+      },
+      "   "{
+         "     ""name":"RAND Corporation",
+         "     ""rss_url":"https://www.rand.org/topics/national-security.xml",
+         "     ""main_url":"https://www.rand.org",
+         "     ""category":"research",
+         "     ""update_frequency":"weekly",
+         "     ""geo_focus":[
+            "       ""US",
+            "       ""global""     "
+         ],
+         "     ""tags":[
+            "       ""research",
+            "       ""policy",
+            "       ""strategy",
+            "       ""analysis""     "
+         ],
+         "     ""source_file":"a""   "
+      },
+      "   "{
+         "     ""name":"Center for Strategic & International Studies",
+         "     ""rss_url":"https://www.csis.org/media/feeds/csisaudio.xml",
+         "     ""main_url":"https://www.csis.org",
+         "     ""category":"strategic_analysis",
+         "     ""update_frequency":"daily",
+         "     ""geo_focus":[
+            "       ""US",
+            "       ""china",
+            "       ""russia",
+            "       ""global""     "
+         ],
+         "     ""tags":[
+            "       ""strategy",
+            "       ""china",
+            "       ""russia",
+            "       ""cyber""     "
+         ],
+         "     ""source_file":"a""   "
+      },
+      "   "{
+         "     ""name":"Stockholm International Peace Research Institute",
+         "     ""rss_url":"https://www.sipri.org/rss/combined.xml",
+         "     ""main_url":"https://www.sipri.org",
+         "     ""category":"arms_research",
+         "     ""update_frequency":"weekly",
+         "     ""geo_focus":[
+            "       ""global""     "
+         ],
+         "     ""tags":[
+            "       ""arms_trade",
+            "       ""military_spending",
+            "       ""proliferation""     "
+         ],
+         "     ""source_file":"a",
+         "     ""last_updated":"2025-07-18T04:22:36.428856",
+         "     ""status":"url_fixed""   "
+      },
+      "   "{
+         "     ""name":"Atlantic Council",
+         "     ""rss_url":"https://www.atlanticcouncil.org/feed/",
+         "     ""main_url":"https://www.atlanticcouncil.org",
+         "     ""category":"global_affairs",
+         "     ""update_frequency":"daily",
+         "     ""geo_focus":[
+            "       ""russia",
+            "       ""china",
+            "       ""nato",
+            "       ""ukraine""     "
+         ],
+         "     ""tags":[
+            "       ""russia",
+            "       ""china",
+            "       ""nato",
+            "       ""geopolitics""     "
+         ],
+         "     ""source_file":"a""   "
+      },
+      "   "{
+         "     ""name":"C4ISRNET",
+         "     ""rss_url":"https://www.c4isrnet.com/arc/outboundfeeds/rss/",
+         "     ""main_url":"https://www.c4isrnet.com",
+         "     ""category":"military_tech",
+         "     ""update_frequency":"daily",
+         "     ""geo_focus":[
+            "       ""US",
+            "       ""allies""     "
+         ],
+         "     ""tags":[
+            "       ""C4ISR",
+            "       ""cyber",
+            "       ""electronic_warfare",
+            "       ""military_tech""     "
+         ],
+         "     ""source_file":"a""   "
+      },
+      "   "{
+         "     ""name":"KrebsOnSecurity",
+         "     ""rss_url":"https://krebsonsecurity.com/feed/",
+         "     ""main_url":"https://krebsonsecurity.com",
+         "     ""category":"cybersecurity",
+         "     ""update_frequency":"weekly",
+         "     ""geo_focus":[
+            "       ""global""     "
+         ],
+         "     ""tags":[
+            "       ""cybersecurity",
+            "       ""threats",
+            "       ""breaches",
+            "       ""investigations""     "
+         ],
+         "     ""source_file":"a""   "
+      },
+      "   "{
+         "     ""name":"The Hacker News",
+         "     ""rss_url":"https://feeds.feedburner.com/TheHackersNews",
+         "     ""main_url":"https://thehackernews.com",
+         "     ""category":"cybersecurity",
+         "     ""update_frequency":"daily",
+         "     ""geo_focus":[
+            "       ""global""     "
+         ],
+         "     ""tags":[
+            "       ""cybersecurity",
+            "       ""malware",
+            "       ""vulnerabilities""     "
+         ],
+         "     ""source_file":"a""   "
+      },
+      "   "{
+         "     ""name":"DroneLife",
+         "     ""rss_url":"https://dronelife.com/feed/",
+         "     ""main_url":"https://dronelife.com",
+         "     ""category":"drone_tech",
+         "     ""update_frequency":"daily",
+         "     ""geo_focus":[
+            "       ""US",
+            "       ""global""     "
+         ],
+         "     ""tags":[
+            "       ""drones",
+            "       ""UAV",
+            "       ""military",
+            "       ""technology""     "
+         ],
+         "     ""source_file":"a""   "
+      },
+      "   "{
+         "     ""name":"Bellingcat",
+         "     ""rss_url":"https://www.bellingcat.com/rss",
+         "     ""main_url":"https://www.bellingcat.com",
+         "     ""category":"osint_investigations",
+         "     ""update_frequency":"weekly",
+         "     ""geo_focus":[
+            "       ""global",
+            "       ""ukraine",
+            "       ""russia""     "
+         ],
+         "     ""tags":[
+            "       ""osint",
+            "       ""investigations",
+            "       ""verification",
+            "       ""conflict""     "
+         ],
+         "     ""source_file":"a""   "
+      },
+      "   "{
+         "     ""name":"RT (Russia Today)",
+         "     ""rss_url":"https://rss2json.com/api.json?rss_url=https%3A%2F%2Fwww.rt.com%2Frss%2F",
+         "     ""main_url":"https://www.rt.com",
+         "     ""category":"state_media",
+         "     ""update_frequency":"hourly",
+         "     ""geo_focus":[
+            "       ""russia",
+            "       ""ukraine",
+            "       ""global""     "
+         ],
+         "     ""tags":[
+            "       ""russia",
+            "       ""state_media",
+            "       ""geopolitics",
+            "       ""military""     "
+         ],
+         "     ""source_file":"b",
+         "     ""access_method":"RSS2JSON",
+         "     ""last_updated":"2025-07-18T04:41:03.952264",
+         "     ""status":"manually_fixed",
+         "     ""original_url":"https://news.google.com/rss/search?q=RT+Russia+Today&hl=en-US&gl=US&ceid=US:en""   "
+      },
+      "   "{
+         "     ""name":"Sputnik India",
+         "     ""rss_url":"https://rss2json.com/api.json?rss_url=https%3A%2F%2Fsputnikglobe.com%2Frss%2F",
+         "     ""main_url":"https://sputnikglobe.com",
+         "     ""category":"state_media",
+         "     ""update_frequency":"hourly",
+         "     ""geo_focus":[
+            "       ""russia",
+            "       ""global""     "
+         ],
+         "     ""tags":[
+            "       ""russia",
+            "       ""defense",
+            "       ""space",
+            "       ""military""     "
+         ],
+         "     ""source_file":"b",
+         "     ""last_updated":"2025-07-18T04:41:03.952283",
+         "     ""status":"manually_fixed",
+         "     ""access_method":"RSS2JSON",
+         "     ""original_url":"https://sputniknews.in/export/rss2/all.xml""   "
+      },
+      "   "{
+         "     ""name":"TASS",
+         "     ""rss_url":"https://tass.com/rss/v2.xml",
+         "     ""main_url":"https://tass.com",
+         "     ""category":"state_news_agency",
+         "     ""update_frequency":"hourly",
+         "     ""geo_focus":[
+            "       ""russia",
+            "       ""cis",
+            "       ""global""     "
+         ],
+         "     ""tags":[
+            "       ""russia",
+            "       ""official",
+            "       ""military",
+            "       ""space""     "
+         ],
+         "     ""source_file":"b""   "
+      },
+      "   "{
+         "     ""name":"Moscow Times",
+         "     ""rss_url":"https://www.themoscowtimes.com/rss/news",
+         "     ""main_url":"https://www.themoscowtimes.com",
+         "     ""category":"independent_media",
+         "     ""update_frequency":"daily",
+         "     ""geo_focus":[
+            "       ""russia""     "
+         ],
+         "     ""tags":[
+            "       ""russia",
+            "       ""independent",
+            "       ""politics""     "
+         ],
+         "     ""source_file":"b""   "
+      },
+      "   "{
+         "     ""name":"CGTN - Headlines RSS",
+         "     ""rss_url":"https://cgtn-radio-data.cgtn.com/rss/programother/159",
+         "     ""main_url":"https://www.cgtn.com",
+         "     ""category":"state_media",
+         "     ""update_frequency":"hourly",
+         "     ""geo_focus":[
+            "       ""china",
+            "       ""asia",
+            "       ""global""     "
+         ],
+         "     ""tags":[
+            "       ""china",
+            "       ""state_media",
+            "       ""military",
+            "       ""technology""     "
+         ],
+         "     ""source_file":"b",
+         "     ""last_updated":"2025-07-18T04:13:02.504332",
+         "     ""status":"working_alternative""   "
+      },
+      "   "{
+         "     ""name":"Xinhua News",
+         "     ""rss_url":"http://www.xinhuanet.com/english/rss/chinarss.xml",
+         "     ""main_url":"https://english.news.cn",
+         "     ""category":"state_news_agency",
+         "     ""update_frequency":"hourly",
+         "     ""geo_focus":[
+            "       ""china",
+            "       ""global""     "
+         ],
+         "     ""tags":[
+            "       ""china",
+            "       ""official",
+            "       ""military",
+            "       ""policy""     "
+         ],
+         "     ""source_file":"b",
+         "     ""last_updated":"2025-07-18T04:22:35.163670",
+         "     ""status":"url_fixed""   "
+      },
+      "   "{
+         "     ""name":"Global Times RSS",
+         "     ""rss_url":"http://www.globaltimes.cn/rss/outbrain.xml",
+         "     ""main_url":"https://www.globaltimes.cn",
+         "     ""category":"state_media",
+         "     ""update_frequency":"daily",
+         "     ""geo_focus":[
+            "       ""china",
+            "       ""asia",
+            "       ""global""     "
+         ],
+         "     ""tags":[
+            "       ""china",
+            "       ""military",
+            "       ""defense",
+            "       ""analysis""     "
+         ],
+         "     ""source_file":"b",
+         "     ""last_updated":"2025-07-18T04:13:02.504362",
+         "     ""status":"working_alternative""   "
+      },
+      "   "{
+         "     ""name":"South China Morning Post",
+         "     ""rss_url":"https://www.scmp.com/rss/91/feed",
+         "     ""main_url":"https://www.scmp.com",
+         "     ""category":"independent_media",
+         "     ""update_frequency":"hourly",
+         "     ""geo_focus":[
+            "       ""china",
+            "       ""hong_kong",
+            "       ""asia""     "
+         ],
+         "     ""tags":[
+            "       ""china",
+            "       ""military",
+            "       ""hong_kong",
+            "       ""independent""     "
+         ],
+         "     ""source_file":"b""   "
+      },
+      "   "{
+         "     ""name":"Times of India",
+         "     ""rss_url":"https://timesofindia.indiatimes.com/rssfeedstopstories.cms",
+         "     ""main_url":"https://timesofindia.indiatimes.com",
+         "     ""category":"mainstream_media",
+         "     ""update_frequency":"hourly",
+         "     ""geo_focus":[
+            "       ""india",
+            "       ""south_asia""     "
+         ],
+         "     ""tags":[
+            "       ""india",
+            "       ""defense",
+            "       ""military",
+            "       ""politics""     "
+         ],
+         "     ""source_file":"b""   "
+      },
+      "   "{
+         "     ""name":"Indian Defence Research Wing",
+         "     ""rss_url":"https://www.indiandefensenews.in/feeds/posts/default",
+         "     ""main_url":"https://idrw.org",
+         "     ""category":"defense_specialist",
+         "     ""update_frequency":"daily",
+         "     ""geo_focus":[
+            "       ""india""     "
+         ],
+         "     ""tags":[
+            "       ""india",
+            "       ""defense",
+            "       ""military_tech",
+            "       ""analysis""     "
+         ],
+         "     ""source_file":"b",
+         "     ""access_method":"Direct",
+         "     ""original_url":"https://idrw.org/feed/",
+         "     ""last_updated":"2025-07-18T04:41:03.952289",
+         "     ""status":"manually_fixed""   "
+      },
+      "   "{
+         "     ""name":"Indian Defence News",
+         "     ""rss_url":"https://www.indiandefensenews.in/feeds/posts/default",
+         "     ""main_url":"https://forceindia.net",
+         "     ""category":"defense_magazine",
+         "     ""update_frequency":"weekly",
+         "     ""geo_focus":[
+            "       ""india""     "
+         ],
+         "     ""tags":[
+            "       ""india",
+            "       ""defense",
+            "       ""security",
+            "       ""aerospace""     "
+         ],
+         "     ""source_file":"b",
+         "     ""last_updated":"2025-07-18T04:13:02.504397",
+         "     ""status":"working_alternative""   "
+      },
+      "   "{
+         "     ""name":"Al Jazeera English",
+         "     ""rss_url":"https://www.aljazeera.com/xml/rss/all.xml",
+         "     ""main_url":"https://www.aljazeera.com",
+         "     ""category":"international_media",
+         "     ""update_frequency":"hourly",
+         "     ""geo_focus":[
+            "       ""middle_east",
+            "       ""global""     "
+         ],
+         "     ""tags":[
+            "       ""middle_east",
+            "       ""conflicts",
+            "       ""military",
+            "       ""analysis""     "
+         ],
+         "     ""source_file":"b""   "
+      },
+      "   "{
+         "     ""name":"Arab News RSS",
+         "     ""rss_url":"https://rss2json.com/api.json?rss_url=https%3A%2F%2Fwww.arabnews.com%2Fcat%2F2%2Frss.xml",
+         "     ""main_url":"https://english.alarabiya.net",
+         "     ""category":"international_media",
+         "     ""update_frequency":"hourly",
+         "     ""geo_focus":[
+            "       ""middle_east",
+            "       ""iran",
+            "       ""saudi_arabia""     "
+         ],
+         "     ""tags":[
+            "       ""middle_east",
+            "       ""iran",
+            "       ""defense",
+            "       ""saudi""     "
+         ],
+         "     ""source_file":"b",
+         "     ""last_updated":"2025-07-18T04:41:03.952293",
+         "     ""status":"manually_fixed",
+         "     ""access_method":"RSS2JSON",
+         "     ""original_url":"https://www.arabnews.com/rss""   "
+      },
+      "   "{
+         "     ""name":"IRNA (Islamic Republic News Agency)",
+         "     ""rss_url":"https://en.irna.ir/rss",
+         "     ""main_url":"https://en.irna.ir",
+         "     ""category":"state_news_agency",
+         "     ""update_frequency":"hourly",
+         "     ""geo_focus":[
+            "       ""iran",
+            "       ""middle_east""     "
+         ],
+         "     ""tags":[
+            "       ""iran",
+            "       ""official",
+            "       ""military",
+            "       ""state_media""     "
+         ],
+         "     ""source_file":"b""   "
+      },
+      "   "{
+         "     ""name":"Tasnim News Agency - All Stories",
+         "     ""rss_url":"https://www.tasnimnews.com/en/rss/feed/0/8/0",
+         "     ""main_url":"https://www.tasnimnews.com/en",
+         "     ""category":"semi_official_media",
+         "     ""update_frequency":"hourly",
+         "     ""geo_focus":[
+            "       ""iran",
+            "       ""middle_east""     "
+         ],
+         "     ""tags":[
+            "       ""iran",
+            "       ""irgc",
+            "       ""military",
+            "       ""defense""     "
+         ],
+         "     ""source_file":"b",
+         "     ""last_updated":"2025-07-18T04:13:02.504373",
+         "     ""status":"working_alternative""   "
+      },
+      "   "{
+         "     ""name":"Jerusalem Post",
+         "     ""rss_url":"https://www.jpost.com/rss/rssfeedsfrontpage.aspx",
+         "     ""main_url":"https://www.jpost.com",
+         "     ""category":"mainstream_media",
+         "     ""update_frequency":"hourly",
+         "     ""geo_focus":[
+            "       ""israel",
+            "       ""middle_east""     "
+         ],
+         "     ""tags":[
+            "       ""israel",
+            "       ""military",
+            "       ""defense",
+            "       ""middle_east""     "
+         ],
+         "     ""source_file":"b""   "
+      },
+      "   "{
+         "     ""name":"Yonhap News Agency Fixed",
+         "     ""rss_url":"https://en.yna.co.kr/RSS/news.xml",
+         "     ""main_url":"https://en.yna.co.kr",
+         "     ""category":"national_news_agency",
+         "     ""update_frequency":"hourly",
+         "     ""geo_focus":[
+            "       ""south_korea",
+            "       ""north_korea",
+            "       ""asia""     "
+         ],
+         "     ""tags":[
+            "       ""korea",
+            "       ""defense",
+            "       ""military",
+            "       ""north_korea""     "
+         ],
+         "     ""source_file":"c",
+         "     ""last_updated":"2025-07-18T04:13:02.504406",
+         "     ""status":"working_alternative""   "
+      },
+      "   "{
+         "     ""name":"NHK World",
+         "     ""rss_url":"https://www3.nhk.or.jp/rss/news/cat0.xml",
+         "     ""main_url":"https://www3.nhk.or.jp/nhkworld",
+         "     ""category":"public_broadcaster",
+         "     ""update_frequency":"hourly",
+         "     ""geo_focus":[
+            "       ""japan",
+            "       ""asia_pacific""     "
+         ],
+         "     ""tags":[
+            "       ""japan",
+            "       ""defense",
+            "       ""asia_pacific",
+            "       ""security""     "
+         ],
+         "     ""source_file":"c""   "
+      },
+      "   "{
+         "     ""name":"Deutsche Welle",
+         "     ""rss_url":"https://rss.dw.com/xml/rss-en-all",
+         "     ""main_url":"https://www.dw.com/en",
+         "     ""category":"international_broadcaster",
+         "     ""update_frequency":"hourly",
+         "     ""geo_focus":[
+            "       ""europe",
+            "       ""germany""     "
+         ],
+         "     ""tags":[
+            "       ""europe",
+            "       ""nato",
+            "       ""security",
+            "       ""germany""     "
+         ],
+         "     ""source_file":"c""   "
+      },
+      "   "{
+         "     ""name":"France24",
+         "     ""rss_url":"https://www.france24.com/en/rss",
+         "     ""main_url":"https://www.france24.com",
+         "     ""category":"international_broadcaster",
+         "     ""update_frequency":"hourly",
+         "     ""geo_focus":[
+            "       ""france",
+            "       ""europe",
+            "       ""africa""     "
+         ],
+         "     ""tags":[
+            "       ""france",
+            "       ""europe",
+            "       ""defense",
+            "       ""africa""     "
+         ],
+         "     ""source_file":"c""   "
+      },
+      "   "{
+         "     ""name":"European Security & Defence",
+         "     ""rss_url":"https://euro-sd.com/feed/",
+         "     ""main_url":"https://euro-sd.com",
+         "     ""category":"defense_magazine",
+         "     ""update_frequency":"weekly",
+         "     ""geo_focus":[
+            "       ""europe""     "
+         ],
+         "     ""tags":[
+            "       ""europe",
+            "       ""nato",
+            "       ""defense",
+            "       ""security""     "
+         ],
+         "     ""source_file":"c""   "
+      },
+      "   "{
+         "     ""name":"Defense24",
+         "     ""rss_url":"https://defence24.pl/rss",
+         "     ""main_url":"https://www.defence24.pl",
+         "     ""category":"regional_news",
+         "     ""update_frequency":"daily",
+         "     ""geo_focus":[
+            "       ""Poland",
+            "       ""Europe""     "
+         ],
+         "     ""tags":[
+            "       ""Poland",
+            "       ""defense",
+            "       ""security""     "
+         ],
+         "     ""source_file":"d""   "
+      },
+      "   "{
+         "     ""name":"Militarnyi (Ukrainian Military)",
+         "     ""rss_url":"https://mil.in.ua/en/feed/",
+         "     ""main_url":"https://mil.in.ua",
+         "     ""category":"regional_news",
+         "     ""update_frequency":"daily",
+         "     ""geo_focus":[
+            "       ""Ukraine",
+            "       ""Eastern Europe""     "
+         ],
+         "     ""tags":[
+            "       ""Ukraine",
+            "       ""war",
+            "       ""military""     "
+         ],
+         "     ""source_file":"d""   "
+      },
+      "   "{
+         "     ""name":"Manohar Parrikar Institute for Defence Studies and Analyses",
+         "     ""rss_url":"https://www.idsa.in/rss",
+         "     ""main_url":"https://www.idsa.in",
+         "     ""category":"strategic_analysis",
+         "     ""update_frequency":"weekly",
+         "     ""geo_focus":[
+            "       ""India",
+            "       ""Asia""     "
+         ],
+         "     ""tags":[
+            "       ""India",
+            "       ""think_tank",
+            "       ""security""     "
+         ],
+         "     ""source_file":"d""   "
+      },
+      "   "{
+         "     ""name":"Times of Israel - IDF",
+         "     ""rss_url":"https://rss2json.com/api.json?rss_url=https%3A%2F%2Fwww.timesofisrael.com%2Ffeed%2F",
+         "     ""main_url":"https://www.israeldefense.co.il",
+         "     ""category":"defense_industry",
+         "     ""update_frequency":"monthly",
+         "     ""geo_focus":[
+            "       ""Israel",
+            "       ""Middle East""     "
+         ],
+         "     ""tags":[
+            "       ""Israel",
+            "       ""industry",
+            "       ""cyber""     "
+         ],
+         "     ""source_file":"d",
+         "     ""last_updated":"2025-07-18T04:41:03.952298",
+         "     ""status":"manually_fixed",
+         "     ""access_method":"RSS2JSON",
+         "     ""original_url":"https://www.timesofisrael.com/topic/idf-israel-defense-forces/feed/""   "
+      },
+      "   "{
+         "     ""name":"Ynet",
+         "     ""rss_url":"https://www.ynet.co.il/Integration/StoryRss2.xml",
+         "     ""main_url":"https://www.ynet.co.il/",
+         "     ""category":"mainstream_media",
+         "     ""update_frequency":"hourly",
+         "     ""geo_focus":[
+            "       ""israel""     "
+         ],
+         "     ""tags":[
+            "       ""israel",
+            "       ""hebrew",
+            "       ""news",
+            "       ""military""     "
+         ],
+         "     ""source_file":"opml""   "
+      },
+      "   "{
+         "     ""name":"The Marker",
+         "     ""rss_url":"https://www.themarker.com/srv/tm-all-articles",
+         "     ""main_url":"https://www.themarker.com/",
+         "     ""category":"business_media",
+         "     ""update_frequency":"daily",
+         "     ""geo_focus":[
+            "       ""israel""     "
+         ],
+         "     ""tags":[
+            "       ""israel",
+            "       ""business",
+            "       ""economy",
+            "       ""defense_industry""     "
+         ],
+         "     ""source_file":"opml""   "
+      },
+      "   "{
+         "     ""name":"Maariv",
+         "     ""rss_url":"https://www.maariv.co.il/Rss/RssChadashot",
+         "     ""main_url":"https://www.maariv.co.il/",
+         "     ""category":"mainstream_media",
+         "     ""update_frequency":"hourly",
+         "     ""geo_focus":[
+            "       ""israel""     "
+         ],
+         "     ""tags":[
+            "       ""israel",
+            "       ""hebrew",
+            "       ""news",
+            "       ""politics""     "
+         ],
+         "     ""source_file":"opml""   "
+      },
+      "   "{
+         "     ""name":"Foreign Policy",
+         "     ""rss_url":"https://foreignpolicy.com/feed/",
+         "     ""main_url":"https://foreignpolicy.com/",
+         "     ""category":"international_affairs",
+         "     ""update_frequency":"daily",
+         "     ""geo_focus":[
+            "       ""global",
+            "       ""us""     "
+         ],
+         "     ""tags":[
+            "       ""foreign_policy",
+            "       ""diplomacy",
+            "       ""security",
+            "       ""analysis""     "
+         ],
+         "     ""source_file":"opml""   "
+      },
+      "   "{
+         "     ""name":"UN News - Middle East",
+         "     ""rss_url":"https://www.un.org/sg/en/rss.xml",
+         "     ""main_url":"https://news.un.org/en/",
+         "     ""category":"multilateral_org",
+         "     ""update_frequency":"daily",
+         "     ""geo_focus":[
+            "       ""middle_east",
+            "       ""global""     "
+         ],
+         "     ""tags":[
+            "       ""un",
+            "       ""peacekeeping",
+            "       ""humanitarian",
+            "       ""middle_east""     "
+         ],
+         "     ""source_file":"opml",
+         "     ""access_method":"RSS",
+         "     ""last_updated":"2025-07-18T04:34:00.181977",
+         "     ""status":"proxy_access""   "
+      },
+      "   "{
+         "     ""name":"AJ+",
+         "     ""rss_url":"https://www.ajplus.net/stories?format=rss",
+         "     ""main_url":"https://www.ajplus.net/stories/",
+         "     ""category":"digital_media",
+         "     ""update_frequency":"daily",
+         "     ""geo_focus":[
+            "       ""global",
+            "       ""middle_east""     "
+         ],
+         "     ""tags":[
+            "       ""digital_journalism",
+            "       ""social_issues",
+            "       ""conflict""     "
+         ],
+         "     ""source_file":"opml""   "
+      },
+      "   "{
+         "     ""name":"JFeed",
+         "     ""rss_url":"https://a.jfeed.com/v1/rss/articles/latest/rss2",
+         "     ""main_url":"https://www.jfeed.com/",
+         "     ""category":"jewish_media",
+         "     ""update_frequency":"daily",
+         "     ""geo_focus":[
+            "       ""israel",
+            "       ""global""     "
+         ],
+         "     ""tags":[
+            "       ""jewish",
+            "       ""israel",
+            "       ""community",
+            "       ""news""     "
+         ],
+         "     ""source_file":"opml""   "
+      },
+      "   "{
+         "     ""name":"JNS",
+         "     ""rss_url":"https://rss2json.com/api.json?rss_url=https%3A//www.jns.org/feed/",
+         "     ""main_url":"https://www.jns.org/",
+         "     ""category":"jewish_media",
+         "     ""update_frequency":"daily",
+         "     ""geo_focus":[
+            "       ""israel",
+            "       ""us""     "
+         ],
+         "     ""tags":[
+            "       ""jewish",
+            "       ""israel",
+            "       ""politics",
+            "       ""security""     "
+         ],
+         "     ""source_file":"opml",
+         "     ""access_method":"JSON Proxy",
+         "     ""last_updated":"2025-07-18T04:34:00.181945",
+         "     ""status":"proxy_access""   "
+      },
+      "   "{
+         "     ""name":"Haaretz - Tech",
+         "     ""rss_url":"https://www.haaretz.com/srv/technology-news-rss",
+         "     ""main_url":"https://www.haaretz.com/israel-news/tech-news",
+         "     ""category":"tech_media",
+         "     ""update_frequency":"daily",
+         "     ""geo_focus":[
+            "       ""israel""     "
+         ],
+         "     ""tags":[
+            "       ""israel",
+            "       ""technology",
+            "       ""cybersecurity",
+            "       ""defense_tech""     "
+         ],
+         "     ""source_file":"opml""   "
+      },
+      "   "{
+         "     ""name":"Haaretz - Business",
+         "     ""rss_url":"https://www.haaretz.com/srv/business-rss",
+         "     ""main_url":"https://www.haaretz.com/israel-news/business",
+         "     ""category":"business_media",
+         "     ""update_frequency":"daily",
+         "     ""geo_focus":[
+            "       ""israel""     "
+         ],
+         "     ""tags":[
+            "       ""israel",
+            "       ""business",
+            "       ""economy",
+            "       ""defense_industry""     "
+         ],
+         "     ""source_file":"opml""   "
+      },
+      "   "{
+         "     ""name":"Middle East Monitor",
+         "     ""rss_url":"https://www.middleeastmonitor.com/feed/",
+         "     ""main_url":"https://www.middleeastmonitor.com/",
+         "     ""category":"regional_media",
+         "     ""update_frequency":"daily",
+         "     ""geo_focus":[
+            "       ""middle_east",
+            "       ""palestine""     "
+         ],
+         "     ""tags":[
+            "       ""middle_east",
+            "       ""palestine",
+            "       ""human_rights",
+            "       ""analysis""     "
+         ],
+         "     ""source_file":"opml""   "
+      },
+      "   "{
+         "     ""name":"Israel National News",
+         "     ""rss_url":"https://www.israelnationalnews.com/Rss.aspx?act=.1",
+         "     ""main_url":"http://www.israelnationalnews.com/",
+         "     ""category":"religious_media",
+         "     ""update_frequency":"daily",
+         "     ""geo_focus":[
+            "       ""israel""     "
+         ],
+         "     ""tags":[
+            "       ""israel",
+            "       ""religious",
+            "       ""politics",
+            "       ""settlements""     "
+         ],
+         "     ""source_file":"opml""   "
+      },
+      "   "{
+         "     ""name":"Haaretz - Jewish World",
+         "     ""rss_url":"https://www.haaretz.com/srv/jewish-world-rss",
+         "     ""main_url":"https://www.haaretz.com/jewish",
+         "     ""category":"jewish_media",
+         "     ""update_frequency":"daily",
+         "     ""geo_focus":[
+            "       ""global",
+            "       ""israel""     "
+         ],
+         "     ""tags":[
+            "       ""jewish",
+            "       ""culture",
+            "       ""religion",
+            "       ""community""     "
+         ],
+         "     ""source_file":"opml""   "
+      },
+      "   "{
+         "     ""name":"ISRAEL21c",
+         "     ""rss_url":"https://www.israel21c.org/feed/",
+         "     ""main_url":"https://www.israel21c.org/",
+         "     ""category":"cultural_media",
+         "     ""update_frequency":"weekly",
+         "     ""geo_focus":[
+            "       ""israel""     "
+         ],
+         "     ""tags":[
+            "       ""israel",
+            "       ""culture",
+            "       ""innovation",
+            "       ""lifestyle""     "
+         ],
+         "     ""source_file":"opml""   "
+      },
+      "   "{
+         "     ""name":"Israel Defense Forces",
+         "     ""rss_url":"https://www.youtube.com/feeds/videos.xml?channel_id=UCawNWlihdgaycQpO3zi-jYg",
+         "     ""main_url":"https://www.youtube.com/channel/UCawNWlihdgaycQpO3zi-jYg",
+         "     ""category":"military_official",
+         "     ""update_frequency":"weekly",
+         "     ""geo_focus":[
+            "       ""israel""     "
+         ],
+         "     ""tags":[
+            "       ""israel",
+            "       ""idf",
+            "       ""military",
+            "       ""official""     "
+         ],
+         "     ""source_file":"opml""   "
+      },
+      "   "{
+         "     ""name":"The Times of Israel",
+         "     ""rss_url":"https://api.allorigins.win/get?url=https%3A//www.timesofisrael.com/feed/",
+         "     ""main_url":"https://www.timesofisrael.com/",
+         "     ""category":"mainstream_media",
+         "     ""update_frequency":"hourly",
+         "     ""geo_focus":[
+            "       ""israel",
+            "       ""middle_east""     "
+         ],
+         "     ""tags":[
+            "       ""israel",
+            "       ""politics",
+            "       ""security",
+            "       ""military""     "
+         ],
+         "     ""source_file":"opml",
+         "     ""access_method":"RSS",
+         "     ""last_updated":"2025-07-18T04:34:00.181920",
+         "     ""status":"proxy_access""   "
+      },
+      "   "{
+         "     ""name":"Haaretz Headlines",
+         "     ""rss_url":"https://www.haaretz.com/srv/haaretz-latest-headlines",
+         "     ""main_url":"https://www.haaretz.com/israel-news",
+         "     ""category":"mainstream_media",
+         "     ""update_frequency":"hourly",
+         "     ""geo_focus":[
+            "       ""israel""     "
+         ],
+         "     ""tags":[
+            "       ""israel",
+            "       ""politics",
+            "       ""security",
+            "       ""liberal""     "
+         ],
+         "     ""source_file":"opml""   "
+      },
+      "   "{
+         "     ""name":"Haaretz - Israel News",
+         "     ""rss_url":"https://www.haaretz.com/srv/israel-news-rss",
+         "     ""main_url":"https://www.haaretz.com/israel-news",
+         "     ""category":"mainstream_media",
+         "     ""update_frequency":"hourly",
+         "     ""geo_focus":[
+            "       ""israel""     "
+         ],
+         "     ""tags":[
+            "       ""israel",
+            "       ""domestic",
+            "       ""politics",
+            "       ""security""     "
+         ],
+         "     ""source_file":"opml""   "
+      },
+      "   "{
+         "     ""name":"Haaretz - Middle East",
+         "     ""rss_url":"https://www.haaretz.com/srv/middle-east-news-rss",
+         "     ""main_url":"https://www.haaretz.com/middle-east-news",
+         "     ""category":"regional_media",
+         "     ""update_frequency":"daily",
+         "     ""geo_focus":[
+            "       ""middle_east""     "
+         ],
+         "     ""tags":[
+            "       ""middle_east",
+            "       ""regional",
+            "       ""analysis",
+            "       ""conflicts""     "
+         ],
+         "     ""source_file":"opml""   "
+      },
+      "   "{
+         "     ""name":"Alma Research and Education Center",
+         "     ""rss_url":"https://israel-alma.org/feed/",
+         "     ""main_url":"https://israel-alma.org/",
+         "     ""category":"think_tank",
+         "     ""update_frequency":"weekly",
+         "     ""geo_focus":[
+            "       ""israel",
+            "       ""lebanon",
+            "       ""syria""     "
+         ],
+         "     ""tags":[
+            "       ""israel",
+            "       ""lebanon",
+            "       ""hezbollah",
+            "       ""research""     "
+         ],
+         "     ""source_file":"opml""   "
+      },
+      "   "{
+         "     ""name":"Guardian - Israel",
+         "     ""rss_url":"https://www.theguardian.com/world/israel/rss",
+         "     ""main_url":"https://www.theguardian.com/world/israel",
+         "     ""category":"international_media",
+         "     ""update_frequency":"daily",
+         "     ""geo_focus":[
+            "       ""israel",
+            "       ""palestine""     "
+         ],
+         "     ""tags":[
+            "       ""israel",
+            "       ""palestine",
+            "       ""uk_perspective",
+            "       ""analysis""     "
+         ],
+         "     ""source_file":"opml""   "
+      },
+      "   "{
+         "     ""name":"BBC Middle East",
+         "     ""rss_url":"https://feeds.bbci.co.uk/news/world/middle_east/rss.xml",
+         "     ""main_url":"https://www.bbc.co.uk/news/world/middle_east",
+         "     ""category":"international_broadcaster",
+         "     ""update_frequency":"hourly",
+         "     ""geo_focus":[
+            "       ""middle_east""     "
+         ],
+         "     ""tags":[
+            "       ""middle_east",
+            "       ""bbc",
+            "       ""impartial",
+            "       ""analysis""     "
+         ],
+         "     ""source_file":"opml""   "
+      },
+      "   "{
+         "     ""name":"Al Monitor",
+         "     ""rss_url":"https://www.al-monitor.com/rss",
+         "     ""main_url":"https://www.al-monitor.com/",
+         "     ""category":"regional_media",
+         "     ""update_frequency":"daily",
+         "     ""geo_focus":[
+            "       ""middle_east""     "
+         ],
+         "     ""tags":[
+            "       ""middle_east",
+            "       ""analysis",
+            "       ""politics",
+            "       ""security""     "
+         ],
+         "     ""source_file":"opml""   "
+      },
+      "   "{
+         "     ""name":"France24 Middle East",
+         "     ""rss_url":"https://www.france24.com/en/middle-east/rss",
+         "     ""main_url":"https://www.france24.com/en/middle-east/",
+         "     ""category":"international_broadcaster",
+         "     ""update_frequency":"hourly",
+         "     ""geo_focus":[
+            "       ""middle_east""     "
+         ],
+         "     ""tags":[
+            "       ""middle_east",
+            "       ""france",
+            "       ""analysis",
+            "       ""conflicts""     "
+         ],
+         "     ""source_file":"opml""   "
+      },
+      "   "{
+         "     ""name":"Times of India - Middle East",
+         "     ""rss_url":"https://timesofindia.indiatimes.com/rssfeeds/1898272.cms",
+         "     ""main_url":"https://timesofindia.indiatimes.com/articlelist/1898272.cms",
+         "     ""category":"international_perspective",
+         "     ""update_frequency":"daily",
+         "     ""geo_focus":[
+            "       ""middle_east",
+            "       ""india""     "
+         ],
+         "     ""tags":[
+            "       ""middle_east",
+            "       ""india_perspective",
+            "       ""regional""     "
+         ],
+         "     ""source_file":"opml""   "
+      },
+      "   "{
+         "     ""name":"Al Bawaba",
+         "     ""rss_url":"https://www.albawaba.com/rss/all",
+         "     ""main_url":"https://www.albawaba.com/",
+         "     ""category":"regional_media",
+         "     ""update_frequency":"daily",
+         "     ""geo_focus":[
+            "       ""middle_east",
+            "       ""arab_world""     "
+         ],
+         "     ""tags":[
+            "       ""arab",
+            "       ""middle_east",
+            "       ""culture",
+            "       ""news""     "
+         ],
+         "     ""source_file":"opml""   "
+      },
+      "   "{
+         "     ""name":"New York Times Middle East",
+         "     ""rss_url":"https://rss.nytimes.com/services/xml/rss/nyt/MiddleEast.xml",
+         "     ""main_url":"https://www.nytimes.com/section/world/middleeast",
+         "     ""category":"international_media",
+         "     ""update_frequency":"daily",
+         "     ""geo_focus":[
+            "       ""middle_east""     "
+         ],
+         "     ""tags":[
+            "       ""middle_east",
+            "       ""us_perspective",
+            "       ""analysis",
+            "       ""premium""     "
+         ],
+         "     ""source_file":"opml""   "
+      },
+      "   "{
+         "     ""name":"Middle East News 247",
+         "     ""rss_url":"https://menews247.com/feed/",
+         "     ""main_url":"https://menews247.com/",
+         "     ""category":"regional_media",
+         "     ""update_frequency":"daily",
+         "     ""geo_focus":[
+            "       ""middle_east""     "
+         ],
+         "     ""tags":[
+            "       ""middle_east",
+            "       ""breaking_news",
+            "       ""regional""     "
+         ],
+         "     ""source_file":"opml""   "
+      },
+      "   "{
+         "     ""name":"Middle East Eye",
+         "     ""rss_url":"https://rss2json.com/api.json?rss_url=https%3A%2F%2Fwww.middleeasteye.net%2Frss",
+         "     ""main_url":"https://www.middleeasteye.net/",
+         "     ""category":"independent_media",
+         "     ""update_frequency":"daily",
+         "     ""geo_focus":[
+            "       ""middle_east""     "
+         ],
+         "     ""tags":[
+            "       ""middle_east",
+            "       ""independent",
+            "       ""analysis",
+            "       ""investigative""     "
+         ],
+         "     ""source_file":"opml",
+         "     ""access_method":"RSS2JSON",
+         "     ""original_url":"https://www.middleeasteye.net/rss",
+         "     ""last_updated":"2025-07-18T04:39:21.874633",
+         "     ""status":"rss2json_converted""   "
+      },
+      "   "{
+         "     ""name":"Google News - Israel",
+         "     ""rss_url":"https://news.google.com/rss/search?hl=en-US&gl=US&q=israel&um=1&ie=UTF-8&ceid=US:en",
+         "     ""main_url":"https://news.google.com/search?hl=en-US&gl=US&q=israel&um=1&ie=UTF-8&ceid=US:en",
+         "     ""category":"news_aggregator",
+         "     ""update_frequency":"hourly",
+         "     ""geo_focus":[
+            "       ""israel""     "
+         ],
+         "     ""tags":[
+            "       ""israel",
+            "       ""aggregator",
+            "       ""multiple_sources",
+            "       ""trending""     "
+         ],
+         "     ""source_file":"opml""   "
+      },
+      "   "{
+         "     ""name":"Middle East Institute",
+         "     ""rss_url":"https://www.mei.edu/rss.xml",
+         "     ""main_url":"https://www.mei.edu/",
+         "     ""category":"think_tank",
+         "     ""update_frequency":"weekly",
+         "     ""geo_focus":[
+            "       ""middle_east""     "
+         ],
+         "     ""tags":[
+            "       ""middle_east",
+            "       ""research",
+            "       ""policy",
+            "       ""analysis""     "
+         ],
+         "     ""source_file":"opml""   "
+      },
+      "   "{
+         "     ""name":"Crisis Group - Middle East",
+         "     ""rss_url":"https://www.crisisgroup.org/rss/91",
+         "     ""main_url":"https://www.crisisgroup.org/",
+         "     ""category":"ngo",
+         "     ""update_frequency":"weekly",
+         "     ""geo_focus":[
+            "       ""middle_east",
+            "       ""conflicts""     "
+         ],
+         "     ""tags":[
+            "       ""conflict_prevention",
+            "       ""peacebuilding",
+            "       ""analysis",
+            "       ""ngo""     "
+         ],
+         "     ""source_file":"opml""   "
+      },
+      "   "{
+         "     ""name":"LSE Middle East Centre",
+         "     ""rss_url":"https://feeds.feedburner.com/lsemiddleeastcentre",
+         "     ""main_url":"https://blogs.lse.ac.uk/mec",
+         "     ""category":"academic",
+         "     ""update_frequency":"weekly",
+         "     ""geo_focus":[
+            "       ""middle_east""     "
+         ],
+         "     ""tags":[
+            "       ""academic",
+            "       ""research",
+            "       ""middle_east",
+            "       ""analysis""     "
+         ],
+         "     ""source_file":"opml""   "
+      },
+      "   "{
+         "     ""name":"Israelycool",
+         "     ""rss_url":"https://www.israellycool.com/feed/",
+         "     ""main_url":"https://www.israellycool.com/",
+         "     ""category":"blog",
+         "     ""update_frequency":"daily",
+         "     ""geo_focus":[
+            "       ""israel""     "
+         ],
+         "     ""tags":[
+            "       ""israel",
+            "       ""blog",
+            "       ""commentary",
+            "       ""pro_israel""     "
+         ],
+         "     ""source_file":"opml""   "
+      },
+      "   "{
+         "     ""name":"CGTN - How China Works Podcast",
+         "     ""rss_url":"https://cgtn-radio-data.cgtn.com/rss/programother/516",
+         "     ""main_url":"https://cgtn-radio-data.cgtn.com",
+         "     ""category":"state_media",
+         "     ""update_frequency":"daily",
+         "     ""geo_focus":[
+            "       ""china""     "
+         ],
+         "     ""tags":[
+            "       ""china",
+            "       ""analysis",
+            "       ""podcast",
+            "       ""policy""     "
+         ],
+         "     ""source_file":"alternatives",
+         "     ""added_date":"2025-07-18T04:13:02.504348",
+         "     ""status":"working_alternative""   "
+      },
+      "   "{
+         "     ""name":"China Daily World News",
+         "     ""rss_url":"http://www.chinadaily.com.cn/rss/world_rss.xml",
+         "     ""main_url":"https://www.chinadaily.com.cn",
+         "     ""category":"state_media",
+         "     ""update_frequency":"daily",
+         "     ""geo_focus":[
+            "       ""china",
+            "       ""global""     "
+         ],
+         "     ""tags":[
+            "       ""china",
+            "       ""world_news",
+            "       ""official""     "
+         ],
+         "     ""source_file":"alternatives",
+         "     ""added_date":"2025-07-18T04:13:02.504354",
+         "     ""status":"working_alternative""   "
+      },
+      "   "{
+         "     ""name":"China News Service (ECNS)",
+         "     ""rss_url":"https://www.ecns.cn/rss/rss.xml",
+         "     ""main_url":"https://ecns.cn",
+         "     ""category":"state_media",
+         "     ""update_frequency":"daily",
+         "     ""geo_focus":[
+            "       ""china""     "
+         ],
+         "     ""tags":[
+            "       ""china",
+            "       ""news",
+            "       ""official""     "
+         ],
+         "     ""source_file":"alternatives",
+         "     ""added_date":"2025-07-18T04:13:02.504366",
+         "     ""status":"url_fixed",
+         "     ""last_updated":"2025-07-18T04:22:34.565518""   "
+      },
+      "   "{
+         "     ""name":"Tasnim News Agency - Defense",
+         "     ""rss_url":"https://www.tasnimnews.com/en/rss/feed/1/8/0",
+         "     ""main_url":"https://www.tasnimnews.com",
+         "     ""category":"semi_official_media",
+         "     ""update_frequency":"daily",
+         "     ""geo_focus":[
+            "       ""iran",
+            "       ""middle_east""     "
+         ],
+         "     ""tags":[
+            "       ""iran",
+            "       ""defense",
+            "       ""military",
+            "       ""irgc""     "
+         ],
+         "     ""source_file":"alternatives",
+         "     ""added_date":"2025-07-18T04:13:02.504376",
+         "     ""status":"working_alternative""   "
+      },
+      "   "{
+         "     ""name":"Jerusalem Post - IDF News",
+         "     ""rss_url":"https://www.jpost.com/rss/rssfeedsfrontpage.aspx",
+         "     ""main_url":"https://www.jpost.com",
+         "     ""category":"mainstream_media",
+         "     ""update_frequency":"daily",
+         "     ""geo_focus":[
+            "       ""israel",
+            "       ""middle_east""     "
+         ],
+         "     ""tags":[
+            "       ""israel",
+            "       ""idf",
+            "       ""defense",
+            "       ""military""     "
+         ],
+         "     ""source_file":"alternatives",
+         "     ""added_date":"2025-07-18T04:13:02.504392",
+         "     ""status":"url_fixed",
+         "     ""last_updated":"2025-07-18T04:22:37.864569""   "
+      },
+      "   "{
+         "     ""name":"Indian Express World",
+         "     ""rss_url":"https://rss2json.com/api.json?rss_url=https%3A%2F%2Findianexpress.com%2Ffeed%2F",
+         "     ""main_url":"https://indianexpress.com",
+         "     ""category":"mainstream_media",
+         "     ""update_frequency":"daily",
+         "     ""geo_focus":[
+            "       ""india",
+            "       ""global""     "
+         ],
+         "     ""tags":[
+            "       ""india",
+            "       ""world_news",
+            "       ""international""     "
+         ],
+         "     ""source_file":"alternatives",
+         "     ""added_date":"2025-07-18T04:13:02.504400",
+         "     ""status":"manually_fixed",
+         "     ""access_method":"RSS2JSON",
+         "     ""last_updated":"2025-07-18T04:41:03.952306",
+         "     ""original_url":"https://indianexpress.com/section/world/feed/""   "
+      }" "
+   ],
+   " ""last_updated":"2025-07-18T04:41:03.952309",
+   " ""final_update":"2025-07-18T04:13:02.505906",
+   " ""integration_summary":{
+      "   ""feeds_updated":8,
+      "   ""feeds_added":6,
+      "   ""total_feeds":81 
+   },
+   " ""url_fixes_applied":4,
+   " ""proxy_alternatives_applied":5,
+   " ""rss2json_conversions":1,
+   " ""manual_fixes_applied":6
+}
