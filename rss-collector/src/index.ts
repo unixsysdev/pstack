@@ -1,1 +1,183 @@
-interface Env {\n  DB: D1Database;\n  ORCHESTRATOR_URL: string;\n}\n\ninterface RSSSource {\n  name: string;\n  rss_url: string;\n  main_url: string;\n  category: string;\n  update_frequency: string;\n  geo_focus: string[];\n  tags: string[];\n  access_method?: string;\n}\n\ninterface RSSItem {\n  title: string;\n  link: string;\n  description: string;\n  pubDate: string;\n  guid?: string;\n}\n\nconst RSS_FEEDS = [\n  {\n    \"name\": \"Defense One\",\n    \"rss_url\": \"https://www.defenseone.com/rss/all/\",\n    \"main_url\": \"https://www.defenseone.com\",\n    \"category\": \"defense_policy\",\n    \"update_frequency\": \"daily\",\n    \"geo_focus\": [\"US\", \"global\"],\n    \"tags\": [\"defense\", \"military\", \"pentagon\", \"technology\"]\n  }\n];\n\nexport default {\n  async scheduled(event: ScheduledEvent, env: Env, ctx: ExecutionContext): Promise<void> {\n    console.log('RSS Collector triggered at:', new Date().toISOString());\n    \n    for (const feed of RSS_FEEDS) {\n      try {\n        await processFeed(feed, env);\n      } catch (error) {\n        console.error(`Error processing feed ${feed.name}:`, error);\n      }\n    }\n  },\n\n  async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {\n    const url = new URL(request.url);\n    \n    if (url.pathname === '/trigger' && request.method === 'POST') {\n      // Manual trigger for testing\n      for (const feed of RSS_FEEDS) {\n        try {\n          await processFeed(feed, env);\n        } catch (error) {\n          console.error(`Error processing feed ${feed.name}:`, error);\n        }\n      }\n      return new Response('RSS collection triggered', { status: 200 });\n    }\n    \n    return new Response('RSS Collector Worker', { status: 200 });\n  }\n} satisfies ExportedHandler<Env>;\n\nasync function processFeed(source: RSSSource, env: Env): Promise<void> {\n  try {\n    let feedData: any;\n    \n    if (source.access_method === 'RSS2JSON') {\n      // Handle RSS2JSON sources\n      const response = await fetch(source.rss_url);\n      feedData = await response.json();\n      \n      if (feedData.items) {\n        for (const item of feedData.items) {\n          await processItem({\n            title: item.title,\n            link: item.link,\n            description: item.description || '',\n            pubDate: item.pubDate || new Date().toISOString(),\n            guid: item.guid\n          }, source, env);\n        }\n      }\n    } else {\n      // Handle regular RSS feeds\n      const response = await fetch(source.rss_url);\n      const rssText = await response.text();\n      \n      // Simple RSS parsing\n      const items = parseRSSItems(rssText);\n      \n      for (const item of items) {\n        await processItem(item, source, env);\n      }\n    }\n  } catch (error) {\n    console.error(`Failed to process feed ${source.name}:`, error);\n  }\n}\n\nfunction parseRSSItems(rssText: string): RSSItem[] {\n  const items: RSSItem[] = [];\n  const itemRegex = /<item[^>]*>([\\s\\S]*?)<\\/item>/gi;\n  let match;\n  \n  while ((match = itemRegex.exec(rssText)) !== null) {\n    const itemContent = match[1];\n    \n    const title = extractTag(itemContent, 'title');\n    const link = extractTag(itemContent, 'link');\n    const description = extractTag(itemContent, 'description');\n    const pubDate = extractTag(itemContent, 'pubDate');\n    const guid = extractTag(itemContent, 'guid');\n    \n    if (title && link) {\n      items.push({\n        title: title.trim(),\n        link: link.trim(),\n        description: description?.trim() || '',\n        pubDate: pubDate?.trim() || new Date().toISOString(),\n        guid: guid?.trim()\n      });\n    }\n  }\n  \n  return items;\n}\n\nfunction extractTag(content: string, tagName: string): string | null {\n  const regex = new RegExp(`<${tagName}[^>]*>([\\s\\S]*?)<\\/${tagName}>`, 'i');\n  const match = regex.exec(content);\n  if (match) {\n    return match[1].replace(/<\\!\\[CDATA\\[(.*?)\\]\\]>/g, '$1');\n  }\n  return null;\n}\n\nasync function processItem(item: RSSItem, source: RSSSource, env: Env): Promise<void> {\n  try {\n    // Check if article already exists\n    const existing = await env.DB.prepare(\n      'SELECT id FROM articles WHERE url = ?'\n    ).bind(item.link).first();\n    \n    if (existing) {\n      return; // Already processed\n    }\n    \n    // Insert new article\n    const result = await env.DB.prepare(`\n      INSERT INTO articles (url, title, description, published_at, source_name, category, tags, created_at)\n      VALUES (?, ?, ?, ?, ?, ?, ?, ?)\n    `).bind(\n      item.link,\n      item.title,\n      item.description,\n      new Date(item.pubDate).toISOString(),\n      source.name,\n      source.category,\n      JSON.stringify(source.tags),\n      new Date().toISOString()\n    ).run();\n    \n    if (result.success && result.meta.last_row_id) {\n      // Trigger content extraction\n      await fetch(env.ORCHESTRATOR_URL + '/extract', {\n        method: 'POST',\n        headers: { 'Content-Type': 'application/json' },\n        body: JSON.stringify({\n          article_id: result.meta.last_row_id,\n          url: item.link,\n          source_name: source.name\n        })\n      });\n    }\n  } catch (error) {\n    console.error('Error processing item:', error);\n  }\n}
+interface Env {
+  DB: D1Database;
+  ORCHESTRATOR_URL: string;
+}
+
+interface RSSSource {
+  id: number;
+  name: string;
+  rss_url: string;
+  main_url: string;
+  category: string;
+  update_frequency: string;
+  geo_focus: string; // JSON string
+  tags: string; // JSON string
+  last_checked: string | null;
+  active: number;
+}
+
+interface RSSItem {
+  title: string;
+  link: string;
+  description: string;
+  pubDate: string;
+  guid?: string;
+}
+
+export default {
+  async scheduled(event: ScheduledEvent, env: Env, ctx: ExecutionContext): Promise<void> {
+    console.log('RSS Collector triggered at:', new Date().toISOString());
+    
+    // Get active RSS sources from database
+    const sources = await env.DB.prepare(
+      'SELECT * FROM rss_sources WHERE active = 1'
+    ).all();
+    
+    for (const source of sources.results as RSSSource[]) {
+      try {
+        await processFeed(source, env);
+        // Update last_checked timestamp
+        await env.DB.prepare(
+          'UPDATE rss_sources SET last_checked = ? WHERE id = ?'
+        ).bind(new Date().toISOString(), source.id).run();
+      } catch (error) {
+        console.error(`Error processing feed ${source.name}:`, error);
+      }
+    }
+  },
+
+  async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
+    const url = new URL(request.url);
+    
+    if (url.pathname === '/trigger' && request.method === 'POST') {
+      // Manual trigger for testing
+      const sources = await env.DB.prepare(
+        'SELECT * FROM rss_sources WHERE active = 1'
+      ).all();
+      
+      for (const source of sources.results as RSSSource[]) {
+        try {
+          await processFeed(source, env);
+        } catch (error) {
+          console.error(`Error processing feed ${source.name}:`, error);
+        }
+      }
+      return new Response('RSS collection triggered', { status: 200 });
+    }
+    
+    return new Response('RSS Collector Worker', { status: 200 });
+  }
+} satisfies ExportedHandler<Env>;
+
+async function processFeed(source: RSSSource, env: Env): Promise<void> {
+  try {
+    // Always use direct RSS fetch (no RSS2JSON)
+    const response = await fetch(source.rss_url, {
+      headers: {
+        'User-Agent': 'Mozilla/5.0 (compatible; PerspectiveStack/1.0; +https://perspectivestack.com)'
+      }
+    });
+    
+    if (!response.ok) {
+      console.error(`Failed to fetch ${source.name}: ${response.status}`);
+      return;
+    }
+    
+    const rssText = await response.text();
+    const items = parseRSSItems(rssText);
+    
+    console.log(`Processing ${items.length} items from ${source.name}`);
+    
+    for (const item of items) {
+      await processItem(item, source, env);
+    }
+  } catch (error) {
+    console.error(`Failed to process feed ${source.name}:`, error);
+  }
+}
+
+function parseRSSItems(rssText: string): RSSItem[] {
+  const items: RSSItem[] = [];
+  const itemRegex = /<item[^>]*>([\s\S]*?)<\/item>/gi;
+  let match;
+  
+  while ((match = itemRegex.exec(rssText)) !== null) {
+    const itemContent = match[1];
+    
+    const title = extractTag(itemContent, 'title');
+    const link = extractTag(itemContent, 'link');
+    const description = extractTag(itemContent, 'description');
+    const pubDate = extractTag(itemContent, 'pubDate');
+    const guid = extractTag(itemContent, 'guid');
+    
+    if (title && link) {
+      items.push({
+        title: title.trim(),
+        link: link.trim(),
+        description: description?.trim() || '',
+        pubDate: pubDate?.trim() || new Date().toISOString(),
+        guid: guid?.trim()
+      });
+    }
+  }
+  
+  return items;
+}
+
+function extractTag(content: string, tagName: string): string | null {
+  const regex = new RegExp(`<${tagName}[^>]*>([\s\S]*?)<\/${tagName}>`, 'i');
+  const match = regex.exec(content);
+  if (match) {
+    return match[1].replace(/<!\[CDATA\[(.*?)\]\]>/g, '$1');
+  }
+  return null;
+}
+
+async function processItem(item: RSSItem, source: RSSSource, env: Env): Promise<void> {
+  try {
+    // Check if article already exists
+    const existing = await env.DB.prepare(
+      'SELECT id FROM articles WHERE url = ?'
+    ).bind(item.link).first();
+    
+    if (existing) {
+      return; // Already processed
+    }
+    
+    // Parse JSON fields from source
+    const geoFocus = JSON.parse(source.geo_focus || '[]');
+    const tags = JSON.parse(source.tags || '[]');
+    
+    // Insert new article
+    const result = await env.DB.prepare(`
+      INSERT INTO articles (url, title, description, published_at, source_name, category, tags, created_at)
+      VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+    `).bind(
+      item.link,
+      item.title,
+      item.description,
+      new Date(item.pubDate).toISOString(),
+      source.name,
+      source.category,
+      JSON.stringify(tags),
+      new Date().toISOString()
+    ).run();
+    
+    if (result.success && result.meta.last_row_id) {
+      console.log(`New article: ${item.title} (ID: ${result.meta.last_row_id})`);
+      
+      // Trigger content extraction
+      await fetch(env.ORCHESTRATOR_URL + '/extract', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          article_id: result.meta.last_row_id,
+          url: item.link,
+          source_name: source.name
+        })
+      });
+    }
+  } catch (error) {
+    console.error('Error processing item:', error);
+  }
+}

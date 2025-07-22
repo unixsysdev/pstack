@@ -1,0 +1,17 @@
+-- Insert all RSS sources from rss.json
+INSERT INTO rss_sources (name, rss_url, main_url, category, update_frequency, geo_focus, tags, created_at) VALUES
+('Defense One', 'https://www.defenseone.com/rss/all/', 'https://www.defenseone.com', 'defense_policy', 'daily', '["US", "global"]', '["defense", "military", "pentagon", "technology"]', datetime('now')),
+('Breaking Defense', 'https://breakingdefense.com/rss/', 'https://breakingdefense.com', 'defense_industry', 'daily', '["US", "NATO", "allies"]', '["defense_industry", "contracts", "weapons", "procurement"]', datetime('now')),
+('Defense News', 'https://www.defensenews.com/arc/outboundfeeds/rss/', 'https://www.defensenews.com', 'global_defense', 'daily', '["global", "US", "Europe", "Asia"]', '["global_defense", "international", "military_tech"]', datetime('now')),
+('DefenseScoop', 'https://defensescoop.com/feed/', 'https://defensescoop.com', 'defense_tech', 'daily', '["US"]', '["defense_tech", "cybersecurity", "AI", "innovation"]', datetime('now')),
+('Institute for the Study of War', 'https://www.understandingwar.org/rss.xml', 'https://www.understandingwar.org', 'conflict_analysis', 'daily', '["ukraine", "russia", "iran", "middle_east"]', '["war_analysis", "ukraine", "russia", "iran"]', datetime('now')),
+('Pentagon Contracts', 'https://www.defense.gov/DesktopModules/ArticleCS/RSS.ashx?ContentType=9', 'https://www.defense.gov/News/Contracts/', 'procurement', 'daily', '["US"]', '["contracts", "procurement", "spending", "vendors"]', datetime('now')),
+('CISA Advisories', 'https://www.cisa.gov/cybersecurity-advisories/all.xml', 'https://www.cisa.gov/news-events/cybersecurity-advisories', 'cybersecurity', 'daily', '["US", "global"]', '["cybersecurity", "threats", "vulnerabilities"]', datetime('now')),
+('RAND Corporation', 'https://www.rand.org/topics/national-security.xml', 'https://www.rand.org', 'research', 'weekly', '["US", "global"]', '["research", "policy", "strategy", "analysis"]', datetime('now')),
+('RT (Russia Today)', 'https://www.rt.com/rss/', 'https://www.rt.com', 'state_media', 'hourly', '["russia", "ukraine", "global"]', '["russia", "state_media", "geopolitics", "military"]', datetime('now')),
+('Sputnik Global', 'https://sputnikglobe.com/rss/', 'https://sputnikglobe.com', 'state_media', 'hourly', '["russia", "global"]', '["russia", "defense", "space", "military"]', datetime('now')),
+('TASS', 'https://tass.com/rss/v2.xml', 'https://tass.com', 'state_news_agency', 'hourly', '["russia", "cis", "global"]', '["russia", "official", "military", "space"]', datetime('now')),
+('Xinhua News', 'http://www.xinhuanet.com/english/rss/chinarss.xml', 'https://english.news.cn', 'state_news_agency', 'hourly', '["china", "global"]', '["china", "official", "military", "policy"]', datetime('now')),
+('Al Jazeera English', 'https://www.aljazeera.com/xml/rss/all.xml', 'https://www.aljazeera.com', 'international_media', 'hourly', '["middle_east", "global"]', '["middle_east", "conflicts", "military", "analysis"]', datetime('now')),
+('Jerusalem Post', 'https://www.jpost.com/rss/rssfeedsfrontpage.aspx', 'https://www.jpost.com', 'mainstream_media', 'hourly', '["israel", "middle_east"]', '["israel", "military", "defense", "middle_east"]', datetime('now')),
+('Times of Israel', 'https://www.timesofisrael.com/feed/', 'https://www.timesofisrael.com/', 'mainstream_media', 'hourly', '["israel", "middle_east"]', '["israel", "politics", "security", "military"]', datetime('now'));
