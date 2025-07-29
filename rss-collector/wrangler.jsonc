@@ -1,1 +1,17 @@
-{\n  \"name\": \"rss-collector\",\n  \"main\": \"src/index.ts\",\n  \"compatibility_date\": \"2025-07-22\",\n  \"triggers\": {\n    \"crons\": [\"*/30 * * * *\"]\n  },\n  \"d1_databases\": [\n    {\n      \"binding\": \"DB\",\n      \"database_name\": \"pstack-db\",\n      \"database_id\": \"placeholder\"\n    }\n  ],\n  \"vars\": {\n    \"ORCHESTRATOR_URL\": \"https://orchestrator.perspectivestack.workers.dev\"\n  }\n}
+{ 
+  "name": "rss-collector", 
+  "main": "src/index.ts", 
+  "compatibility_date": "2025-07-22", 
+  "d1_databases": [ 
+    { 
+      "binding": "DB", 
+      "database_name": "pstack-db", 
+      "database_id": "3fd3172a-c963-4842-a3c1-ae1b55ebd401" 
+    } 
+  ],
+  "observability": {
+    "logs": {
+      "enabled": true
+    }
+  }
+} 

@@ -1,0 +1,10 @@
+{
+  "article_id": 999,
+  "url": "https://www.defenseone.com/technology/test",
+  "title": "Pentagon Launches New AI Initiative for Defense Technology",
+  "content": "The Pentagon announced today a comprehensive new artificial intelligence initiative aimed at revolutionizing defense technology capabilities. The program, dubbed 'AI Defense 2025', will focus on developing advanced machine learning systems for threat detection, autonomous defense systems, and strategic intelligence analysis. Defense officials emphasized that this initiative represents a critical step in maintaining technological superiority in an increasingly complex global security environment. The program will involve partnerships with leading tech companies and academic institutions to accelerate AI research and development. Key areas of focus include cybersecurity applications, drone technology, and predictive analytics for military logistics. The initiative comes as other nations, particularly China and Russia, are investing heavily in military AI capabilities. Pentagon officials stressed that ethical AI development and human oversight will remain central to all projects under this initiative. The program is expected to receive significant funding over the next five years, with initial prototypes and proof-of-concept systems scheduled for testing within 18 months.",
+  "word_count": 156,
+  "extracted_at": "2025-07-28T22:15:00.000Z",
+  "source_name": "Defense One",
+  "extraction_method": "manual"
+}

@@ -1,1 +1,32 @@
-{\n  \"name\": \"vector-worker\",\n  \"main\": \"src/index.ts\",\n  \"compatibility_date\": \"2025-07-22\",\n  \"d1_databases\": [\n    {\n      \"binding\": \"DB\",\n      \"database_name\": \"pstack-db\",\n      \"database_id\": \"placeholder\"\n    }\n  ],\n  \"r2_buckets\": [\n    {\n      \"binding\": \"CONTENT_BUCKET\",\n      \"bucket_name\": \"pstack-content\"\n    }\n  ],\n  \"vectorize\": [\n    {\n      \"binding\": \"VECTORIZE_INDEX\",\n      \"index_name\": \"pstack-vectors\"\n    }\n  ]\n}
+{ 
+  "name": "vector-worker", 
+  "main": "src/index.ts", 
+  "compatibility_date": "2025-07-22", 
+  "d1_databases": [ 
+    { 
+      "binding": "DB", 
+      "database_name": "pstack-db", 
+      "database_id": "3fd3172a-c963-4842-a3c1-ae1b55ebd401" 
+    } 
+  ], 
+  "r2_buckets": [ 
+    { 
+      "binding": "CONTENT_BUCKET", 
+      "bucket_name": "pstack-content" 
+    } 
+  ], 
+  "vectorize": [ 
+    { 
+      "binding": "VECTORIZE_INDEX", 
+      "index_name": "pstack-vectors-1024" 
+    } 
+  ], 
+  "ai": { 
+    "binding": "AI" 
+  },
+  "observability": {
+    "logs": {
+      "enabled": true
+    }
+  }
+} 

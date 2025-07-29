@@ -1,1 +1,17 @@
-{\n  \"name\": \"orchestrator\",\n  \"main\": \"src/index.ts\",\n  \"compatibility_date\": \"2025-07-22\",\n  \"d1_databases\": [\n    {\n      \"binding\": \"DB\",\n      \"database_name\": \"pstack-db\",\n      \"database_id\": \"placeholder\"\n    }\n  ],\n  \"vars\": {\n    \"CONTENT_EXTRACTOR_URL\": \"https://content-extractor.perspectivestack.workers.dev\",\n    \"CONTENT_PROCESSOR_URL\": \"https://content-processor.perspectivestack.workers.dev\",\n    \"VECTOR_WORKER_URL\": \"https://vector-worker.perspectivestack.workers.dev\"\n  }\n}
+{
+  "name": "orchestrator",
+  "main": "src/index.ts",
+  "compatibility_date": "2025-07-22",
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "pstack-db",
+      "database_id": "3fd3172a-c963-4842-a3c1-ae1b55ebd401"
+    }
+  ],
+  "vars": {
+    "CONTENT_EXTRACTOR_URL": "https://content-extractor.perspectivestack.workers.dev",
+    "CONTENT_PROCESSOR_URL": "https://content-processor.perspectivestack.workers.dev",
+    "VECTOR_WORKER_URL": "https://vector-worker.perspectivestack.workers.dev"
+  }
+}

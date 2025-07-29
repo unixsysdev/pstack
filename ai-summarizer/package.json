@@ -1,0 +1,13 @@
+{ 
+  "name": "vector-worker", 
+  "version": "1.0.0", 
+  "private": true, 
+  "scripts": { 
+    "deploy": "wrangler deploy" 
+  }, 
+  "devDependencies": { 
+    "@cloudflare/workers-types": "^4.20250106.0", 
+    "typescript": "^5.5.2", 
+    "wrangler": "^4.25.1" 
+  } 
+} 

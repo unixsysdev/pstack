@@ -1,0 +1,26 @@
+{
+  "name": "perspectivestack-frontend",
+  "main": "src/index.ts",
+  "compatibility_date": "2025-07-22",
+  "routes": [
+    { "pattern": "perspectivestack.com/*", "zone_name": "perspectivestack.com" }
+  ],
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "pstack-db",
+      "database_id": "3fd3172a-c963-4842-a3c1-ae1b55ebd401"
+    }
+  ],
+  "r2_buckets": [
+    {
+      "binding": "CONTENT_BUCKET",
+      "bucket_name": "pstack-content"
+    }
+  ],
+  "observability": {
+    "logs": {
+      "enabled": true
+    }
+  }
+}

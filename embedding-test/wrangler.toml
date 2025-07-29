@@ -1,0 +1,13 @@
+name = "embedding-test"
+main = "src/index.ts"
+compatibility_date = "2025-07-22"
+
+[[vectorize]]
+binding = "VECTORIZE_INDEX"
+index_name = "pstack-vectors-1024"
+
+[ai]
+binding = "AI"
+
+[observability]
+enabled = true

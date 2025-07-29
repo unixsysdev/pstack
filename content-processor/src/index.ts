@@ -1,4 +1,76 @@
-interface Env {\n  DB: D1Database;\n  CONTENT_BUCKET: R2Bucket;\n  ORCHESTRATOR_URL: string;\n  CHUTES_AI_TOKEN: string;\n}\n\ninterface ProcessRequest {\n  article_id: number;\n  content_key: string;\n}\n\ninterface AIAnalysis {\n  summary: string;\n  key_points: string[];\n  sentiment: 'positive' | 'negative' | 'neutral';\n  bias_analysis: string;\n  factual_claims: string[];\n  geopolitical_implications: string[];\n  perspectives: {\n    western: string;\n    eastern: string;\n    middle_eastern: string;\n    global_south: string;\n    neutral: string;\n    analytical: string;\n  };\n}\n\nexport default {\n  async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {\n    const url = new URL(request.url);\n    \n    if (url.pathname === '/process' && request.method === 'POST') {\n      try {\n        const body: ProcessRequest = await request.json();\n        ctx.waitUntil(processContent(body, env));\n        return new Response('Content processing initiated', { status: 200 });\n      } catch (error) {\n        console.error('Processing error:', error);\n        return new Response('Processing failed', { status: 500 });\n      }\n    }\n    \n    if (url.pathname === '/health') {\n      return new Response('Content Processor OK', { status: 200 });\n    }\n    \n    return new Response('Content Processor Worker', { status: 200 });\n  }\n} satisfies ExportedHandler<Env>;\n\nasync function processContent(req: ProcessRequest, env: Env): Promise<void> {\n  try {\n    // Get content from R2\n    const contentObj = await env.CONTENT_BUCKET.get(req.content_key);\n    if (!contentObj) {\n      console.error('Content not found in R2:', req.content_key);\n      return;\n    }\n    \n    const contentData = await contentObj.json() as any;\n    const content = contentData.content;\n    \n    if (!content || content.length < 100) {\n      console.error('Insufficient content for processing');\n      return;\n    }\n    \n    // Process with AI\n    const analysis = await analyzeWithAI(content, env);\n    \n    // Store analysis results in R2
+interface Env {
+  DB: D1Database;
+  CONTENT_BUCKET: R2Bucket;
+  ORCHESTRATOR_URL: string;
+  CHUTES_AI_TOKEN: string;
+}
+
+interface ProcessRequest {
+  article_id: number;
+  content_key: string;
+}
+
+interface AIAnalysis {
+  summary: string;
+  key_points: string[];
+  sentiment: 'positive' | 'negative' | 'neutral';
+  bias_analysis: string;
+  factual_claims: string[];
+  geopolitical_implications: string[];
+  perspectives: {
+    western: string;
+    eastern: string;
+    middle_eastern: string;
+    global_south: string;
+    neutral: string;
+    analytical: string;
+  };
+}
+
+export default {
+  async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
+    const url = new URL(request.url);
+    
+    if (url.pathname === '/process' && request.method === 'POST') {
+      try {
+        const body: ProcessRequest = await request.json();
+        ctx.waitUntil(processContent(body, env));
+        return new Response('Content processing initiated', { status: 200 });
+      } catch (error) {
+        console.error('Processing error:', error);
+        return new Response('Processing failed', { status: 500 });
+      }
+    }
+    
+    if (url.pathname === '/health') {
+      return new Response('Content Processor OK', { status: 200 });
+    }
+    
+    return new Response('Content Processor Worker', { status: 200 });
+  }
+} satisfies ExportedHandler<Env>;
+
+async function processContent(req: ProcessRequest, env: Env): Promise<void> {
+  try {
+    // Get content from R2
+    const contentObj = await env.CONTENT_BUCKET.get(req.content_key);
+    if (!contentObj) {
+      console.error('Content not found in R2:', req.content_key);
+      return;
+    }
+    
+    const contentData = await contentObj.json() as any;
+    const content = contentData.content;
+    
+    if (!content || content.length < 100) {
+      console.error('Insufficient content for processing');
+      return;
+    }
+    
+    // Process with AI
+    const analysis = await analyzeWithAI(content, env);
+    
+    // Store analysis results in R2
     const analysisKey = `analyses/${req.article_id}.json`;
     await env.CONTENT_BUCKET.put(analysisKey, JSON.stringify({
       article_id: req.article_id,
@@ -28,4 +100,145 @@ interface Env {\n  DB: D1Database;\n  CONTENT_BUCKET: R2Bucket;\n  ORCHESTRATOR_
       new Date().toISOString()
     ).run();
     
-    // Update article in DB\n    await env.DB.prepare(`\n      UPDATE articles \n      SET processed_at = ?, updated_at = ?\n      WHERE id = ?\n    `).bind(\n      new Date().toISOString(),\n      new Date().toISOString(),\n      req.article_id\n    ).run();\n    \n    // Trigger vectorization\n    await fetch(env.ORCHESTRATOR_URL + '/vectorize', {\n      method: 'POST',\n      headers: { 'Content-Type': 'application/json' },\n      body: JSON.stringify({\n        article_id: req.article_id,\n        content_key: req.content_key,\n        analysis_key: analysisKey\n      })\n    });\n    \n    console.log(`AI analysis completed for article ${req.article_id}`);\n  } catch (error) {\n    console.error('Content processing failed:', error);\n  }\n}\n\nasync function analyzeWithAI(content: string, env: Env): Promise<AIAnalysis> {\n  const prompt = `Analyze the following geopolitical news article. Provide a comprehensive multi-perspective analysis:\n\nArticle Content:\n${content.substring(0, 4000)}\n\nPlease provide:\n1. A concise summary (max 200 words)\n2. Key points (5-7 bullet points)\n3. Overall sentiment (positive/negative/neutral)\n4. Bias analysis - identify potential bias and perspective\n5. Major factual claims that can be verified\n6. Geopolitical implications and significance\n7. Six different perspective analyses:\n   - Western perspective (US/EU viewpoint)\n   - Eastern perspective (China/Russia viewpoint) \n   - Middle Eastern perspective\n   - Global South perspective\n   - Neutral analytical perspective\n   - Academic/research perspective\n\nFormat as JSON with the following structure:\n{\n  \"summary\": \"...\",\n  \"key_points\": [...],\n  \"sentiment\": \"positive|negative|neutral\",\n  \"bias_analysis\": \"...\",\n  \"factual_claims\": [...],\n  \"geopolitical_implications\": [...],\n  \"perspectives\": {\n    \"western\": \"...\",\n    \"eastern\": \"...\",\n    \"middle_eastern\": \"...\",\n    \"global_south\": \"...\",\n    \"neutral\": \"...\",\n    \"analytical\": \"...\"\n  }\n}`;\n  \n  try {\n    const response = await fetch('https://llm.chutes.ai/v1/chat/completions', {\n      method: 'POST',\n      headers: {\n        'Authorization': `Bearer ${env.CHUTES_AI_TOKEN}`,\n        'Content-Type': 'application/json'\n      },\n      body: JSON.stringify({\n        model: 'moonshotai/Kimi-K2-Instruct-tools',\n        messages: [\n          {\n            role: 'user',\n            content: prompt\n          }\n        ],\n        stream: false,\n        max_tokens: 2048,\n        temperature: 0.3\n      })\n    });\n    \n    if (!response.ok) {\n      throw new Error(`AI API error: ${response.status}`);\n    }\n    \n    const aiResponse = await response.json();\n    const aiContent = aiResponse.choices?.[0]?.message?.content;\n    \n    if (!aiContent) {\n      throw new Error('No content in AI response');\n    }\n    \n    // Try to parse JSON from AI response\n    const jsonMatch = aiContent.match(/\\{[\\s\\S]*\\}/);\n    if (jsonMatch) {\n      return JSON.parse(jsonMatch[0]);\n    }\n    \n    // Fallback: create structured response from text\n    return {\n      summary: aiContent.substring(0, 200),\n      key_points: ['AI analysis available in raw format'],\n      sentiment: 'neutral' as const,\n      bias_analysis: 'Analysis pending',\n      factual_claims: [],\n      geopolitical_implications: [],\n      perspectives: {\n        western: aiContent.substring(0, 500),\n        eastern: '',\n        middle_eastern: '',\n        global_south: '',\n        neutral: '',\n        analytical: ''\n      }\n    };\n  } catch (error) {\n    console.error('AI analysis failed:', error);\n    return {\n      summary: 'AI analysis failed',\n      key_points: [],\n      sentiment: 'neutral' as const,\n      bias_analysis: 'Analysis unavailable',\n      factual_claims: [],\n      geopolitical_implications: [],\n      perspectives: {\n        western: '',\n        eastern: '',\n        middle_eastern: '',\n        global_south: '',\n        neutral: '',\n        analytical: ''\n      }\n    };\n  }\n}
+    // Update article in DB
+    await env.DB.prepare(`
+      UPDATE articles 
+      SET processed_at = ?, updated_at = ?
+      WHERE id = ?
+    `).bind(
+      new Date().toISOString(),
+      new Date().toISOString(),
+      req.article_id
+    ).run();
+    
+    // Trigger vectorization
+    await fetch(env.ORCHESTRATOR_URL + '/vectorize', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        article_id: req.article_id,
+        content_key: req.content_key,
+        analysis_key: analysisKey
+      })
+    });
+    
+    console.log(`AI analysis completed for article ${req.article_id}`);
+  } catch (error) {
+    console.error('Content processing failed:', error);
+  }
+}
+
+async function analyzeWithAI(content: string, env: Env): Promise<AIAnalysis> {
+  const prompt = `Analyze the following geopolitical news article. Provide a comprehensive multi-perspective analysis:
+
+Article Content:
+${content.substring(0, 4000)}
+
+Please provide:
+1. A concise summary (max 200 words)
+2. Key points (5-7 bullet points)
+3. Overall sentiment (positive/negative/neutral)
+4. Bias analysis - identify potential bias and perspective
+5. Major factual claims that can be verified
+6. Geopolitical implications and significance
+7. Six different perspective analyses:
+   - Western perspective (US/EU viewpoint)
+   - Eastern perspective (China/Russia viewpoint) 
+   - Middle Eastern perspective
+   - Global South perspective
+   - Neutral analytical perspective
+   - Academic/research perspective
+
+Format as JSON with the following structure:
+{
+  "summary": "...",
+  "key_points": [...],
+  "sentiment": "positive|negative|neutral",
+  "bias_analysis": "...",
+  "factual_claims": [...],
+  "geopolitical_implications": [...],
+  "perspectives": {
+    "western": "...",
+    "eastern": "...",
+    "middle_eastern": "...",
+    "global_south": "...",
+    "neutral": "...",
+    "analytical": "..."
+  }
+}`;
+  
+  try {
+    const response = await fetch('https://llm.chutes.ai/v1/chat/completions', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${env.CHUTES_AI_TOKEN}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        model: 'moonshotai/Kimi-K2-Instruct-tools',
+        messages: [
+          {
+            role: 'user',
+            content: prompt
+          }
+        ],
+        stream: false,
+        max_tokens: 2048,
+        temperature: 0.3
+      })
+    });
+    
+    if (!response.ok) {
+      throw new Error(`AI API error: ${response.status}`);
+    }
+    
+    const aiResponse = await response.json();
+    const aiContent = aiResponse.choices?.[0]?.message?.content;
+    
+    if (!aiContent) {
+      throw new Error('No content in AI response');
+    }
+    
+    // Try to parse JSON from AI response
+    const jsonMatch = aiContent.match(/\{[\s\S]*\}/);
+    if (jsonMatch) {
+      return JSON.parse(jsonMatch[0]);
+    }
+    
+    // Fallback: create structured response from text
+    return {
+      summary: aiContent.substring(0, 200),
+      key_points: ['AI analysis available in raw format'],
+      sentiment: 'neutral' as const,
+      bias_analysis: 'Analysis pending',
+      factual_claims: [],
+      geopolitical_implications: [],
+      perspectives: {
+        western: aiContent.substring(0, 500),
+        eastern: '',
+        middle_eastern: '',
+        global_south: '',
+        neutral: '',
+        analytical: ''
+      }
+    };
+  } catch (error) {
+    console.error('AI analysis failed:', error);
+    return {
+      summary: 'AI analysis failed',
+      key_points: [],
+      sentiment: 'neutral' as const,
+      bias_analysis: 'Analysis unavailable',
+      factual_claims: [],
+      geopolitical_implications: [],
+      perspectives: {
+        western: '',
+        eastern: '',
+        middle_eastern: '',
+        global_south: '',
+        neutral: '',
+        analytical: ''
+      }
+    };
+  }
+}

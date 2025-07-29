@@ -1,0 +1,65 @@
+[\
+  {\"name\": \"Defense One\", \"rss_url\": \"https://www.defenseone.com/rss/all/\", \"category\": \"defense_policy\"},\
+  {\"name\": \"Breaking Defense\", \"rss_url\": \"https://breakingdefense.com/rss/\", \"category\": \"defense_industry\"},\
+  {\"name\": \"Defense News\", \"rss_url\": \"https://www.defensenews.com/arc/outboundfeeds/rss/\", \"category\": \"global_defense\"},\
+  {\"name\": \"DefenseScoop\", \"rss_url\": \"https://defensescoop.com/feed/\", \"category\": \"defense_tech\"},\
+  {\"name\": \"Institute for the Study of War\", \"rss_url\": \"https://www.understandingwar.org/rss.xml\", \"category\": \"conflict_analysis\"},\
+  {\"name\": \"Pentagon Contracts\", \"rss_url\": \"https://www.defense.gov/DesktopModules/ArticleCS/RSS.ashx?ContentType=9\", \"category\": \"procurement\"},\
+  {\"name\": \"CISA Advisories\", \"rss_url\": \"https://www.cisa.gov/cybersecurity-advisories/all.xml\", \"category\": \"cybersecurity\"},\
+  {\"name\": \"RAND Corporation\", \"rss_url\": \"https://www.rand.org/topics/national-security.xml\", \"category\": \"research\"},\
+  {\"name\": \"Center for Strategic & International Studies\", \"rss_url\": \"https://www.csis.org/media/feeds/csisaudio.xml\", \"category\": \"strategic_analysis\"},\
+  {\"name\": \"Stockholm International Peace Research Institute\", \"rss_url\": \"https://www.sipri.org/rss/combined.xml\", \"category\": \"arms_research\"},\
+  {\"name\": \"Atlantic Council\", \"rss_url\": \"https://www.atlanticcouncil.org/feed/\", \"category\": \"global_affairs\"},\
+  {\"name\": \"C4ISRNET\", \"rss_url\": \"https://www.c4isrnet.com/arc/outboundfeeds/rss/\", \"category\": \"military_tech\"},\
+  {\"name\": \"KrebsOnSecurity\", \"rss_url\": \"https://krebsonsecurity.com/feed/\", \"category\": \"cybersecurity\"},\
+  {\"name\": \"The Hacker News\", \"rss_url\": \"https://feeds.feedburner.com/TheHackersNews\", \"category\": \"cybersecurity\"},\
+  {\"name\": \"DroneLife\", \"rss_url\": \"https://dronelife.com/feed/\", \"category\": \"drone_tech\"},\
+  {\"name\": \"Bellingcat\", \"rss_url\": \"https://www.bellingcat.com/rss\", \"category\": \"osint_investigations\"},\
+  {\"name\": \"RT (Russia Today)\", \"rss_url\": \"https://www.rt.com/rss/\", \"category\": \"state_media\"},\
+  {\"name\": \"Sputnik\", \"rss_url\": \"https://sputnikglobe.com/rss/\", \"category\": \"state_media\"},\
+  {\"name\": \"TASS\", \"rss_url\": \"https://tass.com/rss/v2.xml\", \"category\": \"state_news_agency\"},\
+  {\"name\": \"Moscow Times\", \"rss_url\": \"https://www.themoscowtimes.com/rss/news\", \"category\": \"independent_media\"},\
+  {\"name\": \"CGTN - Headlines\", \"rss_url\": \"https://cgtn-radio-data.cgtn.com/rss/programother/159\", \"category\": \"state_media\"},\
+  {\"name\": \"Xinhua News\", \"rss_url\": \"http://www.xinhuanet.com/english/rss/chinarss.xml\", \"category\": \"state_news_agency\"},\
+  {\"name\": \"Global Times\", \"rss_url\": \"http://www.globaltimes.cn/rss/outbrain.xml\", \"category\": \"state_media\"},\
+  {\"name\": \"South China Morning Post\", \"rss_url\": \"https://www.scmp.com/rss/91/feed\", \"category\": \"independent_media\"},\
+  {\"name\": \"Times of India\", \"rss_url\": \"https://timesofindia.indiatimes.com/rssfeedstopstories.cms\", \"category\": \"mainstream_media\"},\
+  {\"name\": \"Indian Defence Research Wing\", \"rss_url\": \"https://www.indiandefensenews.in/feeds/posts/default\", \"category\": \"defense_specialist\"},\
+  {\"name\": \"Al Jazeera English\", \"rss_url\": \"https://www.aljazeera.com/xml/rss/all.xml\", \"category\": \"international_media\"},\
+  {\"name\": \"Arab News\", \"rss_url\": \"https://www.arabnews.com/rss\", \"category\": \"international_media\"},\
+  {\"name\": \"IRNA\", \"rss_url\": \"https://en.irna.ir/rss\", \"category\": \"state_news_agency\"},\
+  {\"name\": \"Tasnim News Agency\", \"rss_url\": \"https://www.tasnimnews.com/en/rss/feed/0/8/0\", \"category\": \"semi_official_media\"},\
+  {\"name\": \"Jerusalem Post\", \"rss_url\": \"https://www.jpost.com/rss/rssfeedsfrontpage.aspx\", \"category\": \"mainstream_media\"},\
+  {\"name\": \"Yonhap News Agency\", \"rss_url\": \"https://en.yna.co.kr/RSS/news.xml\", \"category\": \"national_news_agency\"},\
+  {\"name\": \"NHK World\", \"rss_url\": \"https://www3.nhk.or.jp/rss/news/cat0.xml\", \"category\": \"public_broadcaster\"},\
+  {\"name\": \"Deutsche Welle\", \"rss_url\": \"https://rss.dw.com/xml/rss-en-all\", \"category\": \"international_broadcaster\"},\
+  {\"name\": \"France24\", \"rss_url\": \"https://www.france24.com/en/rss\", \"category\": \"international_broadcaster\"},\
+  {\"name\": \"European Security & Defence\", \"rss_url\": \"https://euro-sd.com/feed/\", \"category\": \"defense_magazine\"},\
+  {\"name\": \"Defense24\", \"rss_url\": \"https://defence24.pl/rss\", \"category\": \"regional_news\"},\
+  {\"name\": \"Militarnyi\", \"rss_url\": \"https://mil.in.ua/en/feed/\", \"category\": \"regional_news\"},\
+  {\"name\": \"Manohar Parrikar Institute\", \"rss_url\": \"https://www.idsa.in/rss\", \"category\": \"strategic_analysis\"},\
+  {\"name\": \"Times of Israel\", \"rss_url\": \"https://www.timesofisrael.com/feed/\", \"category\": \"mainstream_media\"},\
+  {\"name\": \"Foreign Policy\", \"rss_url\": \"https://foreignpolicy.com/feed/\", \"category\": \"international_affairs\"},\
+  {\"name\": \"UN News\", \"rss_url\": \"https://www.un.org/sg/en/rss.xml\", \"category\": \"multilateral_org\"},\
+  {\"name\": \"JNS\", \"rss_url\": \"https://www.jns.org/feed/\", \"category\": \"jewish_media\"},\
+  {\"name\": \"Haaretz - Tech\", \"rss_url\": \"https://www.haaretz.com/srv/technology-news-rss\", \"category\": \"tech_media\"},\
+  {\"name\": \"Haaretz - Business\", \"rss_url\": \"https://www.haaretz.com/srv/business-rss\", \"category\": \"business_media\"},\
+  {\"name\": \"Middle East Monitor\", \"rss_url\": \"https://www.middleeastmonitor.com/feed/\", \"category\": \"regional_media\"},\
+  {\"name\": \"Israel National News\", \"rss_url\": \"https://www.israelnationalnews.com/Rss.aspx?act=.1\", \"category\": \"religious_media\"},\
+  {\"name\": \"ISRAEL21c\", \"rss_url\": \"https://www.israel21c.org/feed/\", \"category\": \"cultural_media\"},\
+  {\"name\": \"Haaretz Headlines\", \"rss_url\": \"https://www.haaretz.com/srv/haaretz-latest-headlines\", \"category\": \"mainstream_media\"},\
+  {\"name\": \"Haaretz - Israel News\", \"rss_url\": \"https://www.haaretz.com/srv/israel-news-rss\", \"category\": \"mainstream_media\"},\
+  {\"name\": \"Haaretz - Middle East\", \"rss_url\": \"https://www.haaretz.com/srv/middle-east-news-rss\", \"category\": \"regional_media\"},\
+  {\"name\": \"Alma Research\", \"rss_url\": \"https://israel-alma.org/feed/\", \"category\": \"think_tank\"},\
+  {\"name\": \"Guardian - Israel\", \"rss_url\": \"https://www.theguardian.com/world/israel/rss\", \"category\": \"international_media\"},\
+  {\"name\": \"BBC Middle East\", \"rss_url\": \"https://feeds.bbci.co.uk/news/world/middle_east/rss.xml\", \"category\": \"international_broadcaster\"},\
+  {\"name\": \"Al Monitor\", \"rss_url\": \"https://www.al-monitor.com/rss\", \"category\": \"regional_media\"},\
+  {\"name\": \"France24 Middle East\", \"rss_url\": \"https://www.france24.com/en/middle-east/rss\", \"category\": \"international_broadcaster\"},\
+  {\"name\": \"Middle East Eye\", \"rss_url\": \"https://www.middleeasteye.net/rss\", \"category\": \"independent_media\"},\
+  {\"name\": \"Middle East Institute\", \"rss_url\": \"https://www.mei.edu/rss.xml\", \"category\": \"think_tank\"},\
+  {\"name\": \"Crisis Group - Middle East\", \"rss_url\": \"https://www.crisisgroup.org/rss/91\", \"category\": \"ngo\"},\
+  {\"name\": \"China Daily World\", \"rss_url\": \"http://www.chinadaily.com.cn/rss/world_rss.xml\", \"category\": \"state_media\"},\
+  {\"name\": \"China News Service\", \"rss_url\": \"https://www.ecns.cn/rss/rss.xml\", \"category\": \"state_media\"},\
+  {\"name\": \"Tasnim Defense\", \"rss_url\": \"https://www.tasnimnews.com/en/rss/feed/1/8/0\", \"category\": \"semi_official_media\"},\
+  {\"name\": \"Indian Express World\", \"rss_url\": \"https://indianexpress.com/section/world/feed/\", \"category\": \"mainstream_media\"}\
+]

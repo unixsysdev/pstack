@@ -1,0 +1,8 @@
+name = "queue-manager" 
+main = "src/index.ts" 
+compatibility_date = "2024-03-20" 
+ 
+[[d1_databases]] 
+binding = "DB" 
+database_name = "pstack-db" 
+database_id = "3fd3172a-c963-4842-a3c1-ae1b55ebd401" 

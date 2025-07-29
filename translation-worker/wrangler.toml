@@ -1,0 +1,26 @@
+name = "translation-worker"
+main = "src/index.ts"
+compatibility_date = "2025-07-28"
+compatibility_flags = ["nodejs_compat"]
+
+[env]
+CHUTES_API_TOKEN = "cpk_1d25125034a440bbacb509c7a7f82ca5.370d8ad91ab3510687f98806820f1062.KClqOdETgg2iJypN2garaRGohzzDRbWo"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "pstack-db"
+database_id = "3fd3172a-c963-4842-a3c1-ae1b55ebd401"
+
+[[r2_buckets]]
+binding = "CONTENT_BUCKET"
+bucket_name = "pstack-content"
+
+[[vectorize]]
+binding = "VECTORIZE_INDEX"
+index_name = "pstack-vectors-1024"
+
+[ai]
+binding = "AI"
+
+[observability]
+enabled = true
